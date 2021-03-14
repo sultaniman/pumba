@@ -1,6 +1,7 @@
 defmodule Pumba.UserAgents do
   @moduledoc false
   use GenServer, restart: :transient
+  alias Pumba.Result
   alias Pumba.Client.DefaultClient
 
   @mod __MODULE__
@@ -47,7 +48,11 @@ defmodule Pumba.UserAgents do
           :noreply,
           %{
             state
-            | browsers: Map.put(browsers, browser_name, {:ok, user_agents})
+            | browsers:
+                Map.put(browsers, browser_name, %Result{
+                  count: length(user_agents),
+                  user_agents: process_result(user_agents)
+                })
           }
         }
 
@@ -56,9 +61,20 @@ defmodule Pumba.UserAgents do
           :noreply,
           %{
             state
-            | browsers: Map.put(browsers, browser_name, {:error, err})
+            | browsers:
+                Map.put(browsers, browser_name, %Result{
+                  error: err,
+                  count: 0,
+                  user_agents: %{}
+                })
           }
         }
     end
+  end
+
+  defp process_result(user_agents) do
+    user_agents
+    |> Enum.with_index()
+    |> Enum.into(%{})
   end
 end
