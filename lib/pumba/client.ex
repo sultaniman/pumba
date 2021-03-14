@@ -6,5 +6,5 @@ defmodule Pumba.Client do
   @doc """
   Load the list of user agents
   """
-  @callback load(String.t) :: {:ok, [String.t]} | {:error, any}
+  @callback load(String.t()) :: {:ok, [String.t()]} | {:error, any}
 end

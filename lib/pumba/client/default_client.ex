@@ -18,7 +18,9 @@ defmodule Pumba.Client.DefaultClient do
           |> Floki.find("#liste > ul > li > a")
           |> Enum.map(&Floki.text/1)
         }
-      error -> error
+
+      error ->
+        error
     end
   end
 end
