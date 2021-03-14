@@ -1,6 +1,6 @@
 defmodule Pumba do
   @moduledoc """
-  Documentation for `Pumba`.
+  Documentation for `Pumba`
   """
   alias Pumba.UserAgents
 
@@ -13,4 +13,8 @@ defmodule Pumba do
   def set_client(client) do
     UserAgents.set_client(client)
   end
+
+  def all, do: UserAgents.all()
+
+  def random, do: UserAgents.random()
 end
