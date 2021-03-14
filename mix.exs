@@ -18,11 +18,11 @@ defmodule Pumba.MixProject do
     ]
   end
 
-  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
       {:floki, "~> 0.30.0"},
       {:tesla, "~> 1.4"},
+      {:typed_struct, "~> 0.2.1"},
       {:mox, "~> 1.0", only: :test}
     ]
   end
