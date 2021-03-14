@@ -1,5 +1,5 @@
 # Pumba
-![Tests](https://github.com/imanhodjaev/pumba/actions/workflows/pumbaa.yml/badge.svg)
+![Tests](https://github.com/imanhodjaev/pumba/workflows/pubmaa.yml/badge.svg)
 
 **TODO: Add description**
 
