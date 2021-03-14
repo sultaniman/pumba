@@ -1,4 +1,4 @@
-name: Elixir CI
+name: Test Pumba
 
 on:
   push:
