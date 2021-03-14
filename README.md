@@ -1,4 +1,5 @@
 # Pumba
+![Tests](https://github.com/imanhodjaev/pumba/actions/workflows/pumbaa.yml/badge.svg)
 
 **TODO: Add description**
 
