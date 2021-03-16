@@ -1,7 +1,6 @@
 # Pumba
 ![Tests](https://github.com/imanhodjaev/pumba/actions/workflows/pumba.yml/badge.svg)
 
-**TODO: Add description**
 
 ## Installation
 
@@ -20,3 +19,4 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/pumba](https://hexdocs.pm/pumba).
 
+Assets: https://www.flickr.com/photos/15622979@N07/4329873905

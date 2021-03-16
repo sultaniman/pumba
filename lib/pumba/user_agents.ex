@@ -94,15 +94,16 @@ defmodule Pumba.UserAgents do
   @impl true
   def handle_call(:random, _from, %{names: names, browsers: browsers} = state) do
     ts = DateTime.now!("Etc/UTC") |> DateTime.to_unix()
-    :rand.seed(:exsss, {ts+1, ts+2, ts+3})
+    :rand.seed(:exsss, {ts + 1, ts + 2, ts + 3})
 
-    result =
-      browsers
-      |> Map.get(names |> Enum.random())
+    case browsers |> Map.get(names |> Enum.random()) do
+      nil ->
+        {:reply, nil, state}
 
-    n = Enum.random(0..result.count)
-
-    {:reply, result.user_agents[n], state}
+      result ->
+        n = Enum.random(0..result.count)
+        {:reply, result.user_agents[n], state}
+    end
   end
 
   defp process_result(user_agents) do
