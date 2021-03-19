@@ -14,7 +14,9 @@ defmodule Pumba do
     UserAgents.set_client(client)
   end
 
+  @spec all :: map()
   def all, do: UserAgents.all()
 
+  @spec random :: String.t() | nil
   def random, do: UserAgents.random()
 end

@@ -19,7 +19,7 @@ defmodule Pumba.UserAgents do
     )
   end
 
-  @spec all :: term()
+  @spec all :: map()
   def all, do: GenServer.call(@mod, :all)
 
   @spec random :: term()
