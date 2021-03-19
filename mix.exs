@@ -1,5 +1,11 @@
 defmodule Pumba.MixProject do
   use Mix.Project
+  @package [
+    name: "pumba",
+    files: ~w(lib .formatter.exs mix.exs README* LICENSE*),
+    licenses: ["Unlicense"],
+    links: %{"GitHub" => "https://github.com/imanhodjaev/pumba"}
+  ]
 
   def project do
     [
@@ -7,7 +13,16 @@ defmodule Pumba.MixProject do
       version: "0.1.0",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: @package,
+      # Docs
+      name: "Dust",
+      source_url: "https://github.com/imanhodjaev/pumba",
+      homepage_url: "https://github.com/imanhodjaev/pumba",
+      docs: [
+        main: "readme",
+        extras: ["README.md"]
+      ]
     ]
   end
 
@@ -23,6 +38,7 @@ defmodule Pumba.MixProject do
       {:floki, "~> 0.30.0"},
       {:tesla, "~> 1.4"},
       {:typed_struct, "~> 0.2.1"},
+      {:ex_doc, "~> 0.24.0", only: :dev, runtime: false},
       {:mox, "~> 1.0", only: :test}
     ]
   end
