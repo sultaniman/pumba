@@ -7,6 +7,8 @@ defmodule Pumba.MixProject do
     links: %{"GitHub" => "https://github.com/imanhodjaev/pumba"}
   ]
 
+  @description "Fetch, store and use user agents"
+
   def project do
     [
       app: :pumba,
@@ -14,6 +16,7 @@ defmodule Pumba.MixProject do
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      description: @description,
       package: @package,
       # Docs
       name: "Dust",

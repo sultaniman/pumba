@@ -1,10 +1,8 @@
-<h1 align="center">Pumba</h1>
-
-![Tests](https://github.com/imanhodjaev/pumba/actions/workflows/pumba.yml/badge.svg)
-
 <p align="center">
   <img width="250" src="https://raw.githubusercontent.com/imanhodjaev/pumba/main/assets/pumbaa.jpeg"/>
 </p>
+
+![Tests](https://github.com/imanhodjaev/pumba/actions/workflows/pumba.yml/badge.svg)
 
 ## Installation
 
