@@ -8,7 +8,7 @@ defmodule Pumba.MixProject do
     links: %{"GitHub" => "https://github.com/imanhodjaev/pumba"}
   ]
 
-  @description "Fetch, store and access user agents for different browsers"
+  @description "Fetch, store and access user agent strings for different browsers"
 
   def project do
     [
@@ -19,6 +19,7 @@ defmodule Pumba.MixProject do
       deps: deps(),
       description: @description,
       package: @package,
+
       # Docs
       name: "Pumba",
       source_url: "https://github.com/imanhodjaev/pumba",
