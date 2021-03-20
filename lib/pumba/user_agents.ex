@@ -20,7 +20,7 @@ defmodule Pumba.UserAgents do
 
   `browsers` contains `%Pumba.Result{}` record which keeps
   total count of user agents and indexed map with user
-  agent string for fast lookups.
+  agent strings for fast lookups.
 
   It uses `Pumba.Client.DefaultClient` which loads
   user agent strings from http://www.useragentstring.com.

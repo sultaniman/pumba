@@ -94,7 +94,7 @@ as it's value, `names` is a list of loaded browsers using which we later can
 randomly pick browser and return a random user agent.
 
 `browsers` contains `%Pumba.Result{}` record which keeps total count of user
-agents and indexed map with user agent string for fast lookups.
+agents and indexed map with user agent strings for fast lookups.
 
 ## Documentation 📜
 
