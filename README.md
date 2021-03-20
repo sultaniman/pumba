@@ -9,7 +9,7 @@ Pumba helps you
 1. To fetch user agent strings for different browsers,
 2. Keep in-memory state,
 3. Randomly fetch any user agent,
-4. Profit - Hakuna Matata :)
+4. Profit - Hakuna Matata 🦄
 
 ## Use cases 🔮
 
@@ -82,11 +82,11 @@ If you want to have your own client then it should implement `Pumba.Client` beha
 Storage is a GenServer which has the following state and lives at `Pumba.UserAgents`
 
 ```ex
-  %{
-    client: Pumba.Client.DefaultClient,
-    browsers: %{},
-    names: []
-  }
+%{
+  client: Pumba.Client.DefaultClient,
+  browsers: %{},
+  names: []
+}
 ```
 
 Where `browsers` is a map with key as browser name and the list user agents
@@ -103,4 +103,5 @@ and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/pumba](https://hexdocs.pm/pumba).
 
 ## Assets 💄
+
 https://www.flickr.com/photos/15622979@N07/4329873905
