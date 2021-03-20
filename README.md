@@ -41,7 +41,7 @@ end
 To load user agent strings for a given browser you need to call
 
 ```ex
-iex> Pumba.Load("Firefox")
+iex> Pumba.load("Firefox")
 :ok
 ```
 
@@ -70,7 +70,7 @@ config :pumba,
 Runtime
 
 ```ex
-iex> Pumba.UserAgents.set_client(MyAwesomeClient)
+iex> Pumba.set_client(MyAwesomeClient)
 ```
 
 ### Create custom client
@@ -95,6 +95,10 @@ randomly pick browser and return a random user agent.
 
 `browsers` contains `%Pumba.Result{}` record which keeps total count of user
 agents and indexed map with user agent strings for fast lookups.
+
+## Get current state
+
+To get the latest state you can use `Pumba.all/0` function.
 
 ## Documentation 📜
 
