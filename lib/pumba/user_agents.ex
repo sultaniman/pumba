@@ -151,7 +151,7 @@ defmodule Pumba.UserAgents do
         {:reply, nil, state}
 
       result ->
-        n = Enum.random(0..result.count)
+        n = Enum.random(0..(result.count - 1))
         {:reply, result.user_agents[n], state}
     end
   end
