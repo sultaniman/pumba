@@ -6,7 +6,7 @@
 
 Pumba helps you
 
-1. To load user agent strings for different browsers,
+1. To fetch user agent strings for different browsers,
 2. Keep in-memory state,
 3. Randomly fetch any user agent,
 4. Profit - Hakuna Matata :)
@@ -55,6 +55,8 @@ Mozilla/5.0 (X11; Linux ppc64le; rv:75.0) Gecko/20100101 Firefox/75.0
 ```
 
 ### Set custom client
+
+Default client fetches user agents from http://www.useragentstring.com.
 
 There are two ways to set custom client first is via config second is overriding manually
 
