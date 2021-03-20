@@ -77,6 +77,25 @@ iex> Pumba.UserAgents.set_client(MyAwesomeClient)
 
 If you want to have your own client then it should implement `Pumba.Client` behaviour.
 
+### User agents storage
+
+Storage is a GenServer which has the following state and lives at `Pumba.UserAgents`
+
+```ex
+  %{
+    client: Pumba.Client.DefaultClient,
+    browsers: %{},
+    names: []
+  }
+```
+
+Where `browsers` is a map with key as browser name and the list user agents
+as it's value, `names` is a list of loaded browsers using which we later can
+randomly pick browser and return a random user agent.
+
+`browsers` contains `%Pumba.Result{}` record which keeps total count of user
+agents and indexed map with user agent string for fast lookups.
+
 ## Documentation 📜
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)

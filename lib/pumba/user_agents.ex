@@ -10,7 +10,7 @@ defmodule Pumba.UserAgents do
       client: Pumba.Client.DefaultClient,
       browsers: %{},
       names: []
-    },
+    }
   ```
 
   Where `browsers` is a map with key as browser
@@ -18,7 +18,7 @@ defmodule Pumba.UserAgents do
   a list of loaded browsers using which we later
   can randomly pick browser and return a random user agent.
 
-  `browsers` contains `Pumba.Result` record which keeps
+  `browsers` contains `%Pumba.Result{}` record which keeps
   total count of user agents and indexed map with user
   agent string for fast lookups.
 
