@@ -8,6 +8,9 @@ defmodule Pumba.Client.DefaultClient do
 
   plug(Tesla.Middleware.BaseUrl, "http://www.useragentstring.com")
 
+  @doc """
+  Loads user agents from useragentstring.com
+  """
   @impl true
   def load(browser) do
     case get(["/pages/useragentstring.php?name=", browser] |> to_string()) do

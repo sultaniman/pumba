@@ -1,25 +1,26 @@
 defmodule Pumba.MixProject do
   use Mix.Project
+
   @package [
     name: "pumba",
-    files: ~w(lib .formatter.exs mix.exs README* LICENSE*),
+    files: ~w(lib assets .formatter.exs mix.exs README* LICENSE*),
     licenses: ["Unlicense"],
     links: %{"GitHub" => "https://github.com/imanhodjaev/pumba"}
   ]
 
-  @description "Fetch, store and use user agents"
+  @description "Fetch, store and access user agents for different browsers"
 
   def project do
     [
       app: :pumba,
-      version: "0.1.0",
+      version: "0.0.1",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: @description,
       package: @package,
       # Docs
-      name: "Dust",
+      name: "Pumba",
       source_url: "https://github.com/imanhodjaev/pumba",
       homepage_url: "https://github.com/imanhodjaev/pumba",
       docs: [
