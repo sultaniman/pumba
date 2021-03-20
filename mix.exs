@@ -1,4 +1,5 @@
 defmodule Pumba.MixProject do
+  @moduledoc false
   use Mix.Project
 
   @package [
