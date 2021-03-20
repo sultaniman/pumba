@@ -9,7 +9,7 @@ Pumba helps you
 1. To load user agent strings for different browsers,
 2. Keep in-memory state,
 3. Randomly fetch any user agent,
-4. Profit :)
+4. Profit - Hakuna Matata :)
 
 ## Use cases 🔮
 
@@ -58,9 +58,17 @@ Mozilla/5.0 (X11; Linux ppc64le; rv:75.0) Gecko/20100101 Firefox/75.0
 
 There are two ways to set custom client first is via config second is overriding manually
 
+Configuration
+
 ```ex
 config :pumba,
   client: MyAwesomeClient
+```
+
+Runtime
+
+```ex
+iex> Pumba.UserAgents.set_client(MyAwesomeClient)
 ```
 
 ### Create custom client
