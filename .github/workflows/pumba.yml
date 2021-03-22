@@ -1,4 +1,4 @@
-name: Test Pumba
+name: Pumba CI
 
 on:
   push:
