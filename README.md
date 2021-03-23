@@ -3,6 +3,7 @@
 </p>
 
 ![Tests](https://github.com/imanhodjaev/pumba/actions/workflows/pumba.yml/badge.svg)
+![Lint](https://github.com/imanhodjaev/pumba/actions/workflows/lint.yml/badge.svg)
 
 Pumba helps you
 

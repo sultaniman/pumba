@@ -45,6 +45,8 @@ defmodule Pumba.MixProject do
       {:tesla, "~> 1.4"},
       {:typed_struct, "~> 0.2.1"},
       {:ex_doc, "~> 0.24.0", only: :dev, runtime: false},
+      {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
+      {:inch_ex, github: "rrrene/inch_ex", only: [:dev, :test]},
       {:mox, "~> 1.0", only: :test}
     ]
   end
