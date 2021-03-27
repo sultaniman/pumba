@@ -67,18 +67,44 @@ defmodule UserAgentTest do
 
     assert Enum.member?(@user_agents, UserAgents.random())
   end
+
+  test "test user agents readiness" do
+    start_supervised(UserAgents)
+    UserAgents.set_client(DummyClientPumba)
+    UserAgents.load("Firefox")
+    assert UserAgents.ready?("Firefox")
+    refute UserAgents.ready?("Bobo")
+  end
+
+  test "test user agents get for a single browser" do
+    start_supervised(UserAgents)
+    UserAgents.set_client(DummyClientPumba)
+    UserAgents.load("Firefox")
+
+    assert UserAgents.get("Firefox") == [
+             "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0) Gecko/20190101 Firefox/77.0",
+             "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:77.0) Gecko/20100101 Firefox/77.0",
+             "Mozilla/5.0 (X11; Linux ppc64le; rv:75.0) Gecko/20100101 Firefox/75.0",
+             "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:39.0) Gecko/20100101 Firefox/75.0",
+             "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.10; rv:75.0) Gecko/20100101 Firefox/75.0"
+           ]
+
+    assert UserAgents.get("Bobo") == []
+  end
 end
 
 defmodule DummyClientPumba do
   @moduledoc false
   def load(_) do
-    {:ok,
-     [
-       "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0) Gecko/20190101 Firefox/77.0",
-       "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:77.0) Gecko/20100101 Firefox/77.0",
-       "Mozilla/5.0 (X11; Linux ppc64le; rv:75.0) Gecko/20100101 Firefox/75.0",
-       "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:39.0) Gecko/20100101 Firefox/75.0",
-       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.10; rv:75.0) Gecko/20100101 Firefox/75.0"
-     ]}
+    {
+      :ok,
+      [
+        "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0) Gecko/20190101 Firefox/77.0",
+        "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:77.0) Gecko/20100101 Firefox/77.0",
+        "Mozilla/5.0 (X11; Linux ppc64le; rv:75.0) Gecko/20100101 Firefox/75.0",
+        "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:39.0) Gecko/20100101 Firefox/75.0",
+        "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.10; rv:75.0) Gecko/20100101 Firefox/75.0"
+      ]
+    }
   end
 end

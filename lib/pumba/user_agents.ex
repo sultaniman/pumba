@@ -84,6 +84,22 @@ defmodule Pumba.UserAgents do
     GenServer.cast(@mod, {:load, browser})
   end
 
+  @doc """
+  Check if user agents for a given browser were loaded
+  """
+  @spec ready?(String.t()) :: boolean()
+  def ready?(browser) do
+    GenServer.call(@mod, {:ready, browser})
+  end
+
+  @doc """
+  Get list of user agents for browser
+  """
+  @spec get(String.t()) :: [String.t()]
+  def get(browser) do
+    GenServer.call(@mod, {:get, browser})
+  end
+
   # Server
   @impl true
   def init(state) do
@@ -153,6 +169,32 @@ defmodule Pumba.UserAgents do
       result ->
         n = Enum.random(0..(result.count - 1))
         {:reply, result.user_agents[n], state}
+    end
+  end
+
+  @doc false
+  @impl true
+  def handle_call({:ready, browser}, _from, %{browsers: browsers} = state) do
+    {
+      :reply,
+      Map.has_key?(browsers, browser) && is_nil(browsers[browser].error),
+      state
+    }
+  end
+
+  @doc false
+  @impl true
+  def handle_call({:get, browser}, _from, %{browsers: browsers} = state) do
+    case Map.get(browsers, browser) do
+      nil ->
+        {:reply, [], state}
+
+      result ->
+        {
+          :reply,
+          result.user_agents |> Map.values(),
+          state
+        }
     end
   end
 

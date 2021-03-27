@@ -31,4 +31,16 @@ defmodule Pumba do
   """
   @spec random :: String.t() | nil
   def random, do: UserAgents.random()
+
+  @doc """
+  Check if user agents for a given browser were loaded
+  """
+  @spec ready?(String.t()) :: boolean()
+  def ready?(browser), do: UserAgents.ready?(browser)
+
+  @doc """
+  Get list of user agents for browser
+  """
+  @spec get(String.t()) :: [String.t()]
+  def get(browser), do: UserAgents.get(browser)
 end
