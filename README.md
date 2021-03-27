@@ -30,7 +30,7 @@ application list to start:
 ```elixir
 def deps do
   [
-    {:pumba, "~> 0.0.1"}
+    {:pumba, "~> 0.0.2"}
   ]
 end
 ```
@@ -53,6 +53,23 @@ To load user agent strings for a given browser you need to call
 ```ex
 iex> Pumba.random()
 Mozilla/5.0 (X11; Linux ppc64le; rv:75.0) Gecko/20100101 Firefox/75.0
+```
+
+### Check if user agents loaded
+
+```ex
+iex> Pumba.ready?("Firefox")
+true
+```
+
+### Get user agents for browser
+
+```ex
+iex> Pumba.get("Firefox")
+[
+  "Mozilla/5.0 (X11; Linux ppc64le; rv:75.0) Gecko/20100101 Firefox/75.0",
+  ...
+]
 ```
 
 ### Set custom client
