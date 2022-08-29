@@ -1,12 +1,12 @@
 defmodule Pumba.Client.DefaultClient do
   @moduledoc """
-  Default client uses http://www.useragentstring.com
+  Default client uses https://www.useragentstring.com
   """
   @behaviour Pumba.Client
 
   use Tesla
 
-  plug(Tesla.Middleware.BaseUrl, "http://www.useragentstring.com")
+  plug(Tesla.Middleware.BaseUrl, "https://www.useragentstring.com")
 
   @doc """
   Loads user agents from useragentstring.com
