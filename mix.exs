@@ -41,7 +41,7 @@ defmodule Pumba.MixProject do
 
   defp deps do
     [
-      {:floki, "~> 0.33.1"},
+      {:floki, "~> 0.34.0"},
       {:tesla, "~> 1.4"},
       {:typed_struct, "~> 0.2.1"},
       {:ex_doc, "~> 0.28.4", only: :dev, runtime: false},
